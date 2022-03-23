@@ -25,7 +25,12 @@ class MainActivity : AppCompatActivity() {
         binding.ivImageSrc.setImageBitmap(srcBitmap)
         binding.ivImageDst.setImageBitmap(dstBitmap)
 
-        binding.btnGo.setOnClickListener {
+        // Buttons
+        binding.btnGrayscale.setOnClickListener {
+            grayscaleImage(dstBitmap, dstBitmap)
+        }
+
+        binding.btnMirror.setOnClickListener {
             mirrorImage(dstBitmap, dstBitmap)
         }
 
@@ -37,7 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
     // Native stuff
-    external fun mirrorImage(bitmapIn: Bitmap, bitmapOut: Bitmap)
+    private external fun mirrorImage(bitmapIn: Bitmap, bitmapOut: Bitmap)
+    private external fun grayscaleImage(bitmapIn: Bitmap, bitmapOut: Bitmap)
 
     companion object {
         init {

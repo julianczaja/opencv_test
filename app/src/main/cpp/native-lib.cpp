@@ -18,6 +18,15 @@ Java_com_example_opencv_1test_MainActivity_mirrorImage(JNIEnv* env, jobject, job
     matToBitmap(env, src, bitmapOut, false);
 }
 
+extern "C" JNIEXPORT void JNICALL
+Java_com_example_opencv_1test_MainActivity_grayscaleImage(JNIEnv* env, jobject, jobject bitmapIn, jobject bitmapOut)
+{
+    Mat src;
+    bitmapToMat(env, bitmapIn, src, false);
+    grayscaleImage(src);
+    matToBitmap(env, src, bitmapOut, false);
+}
+
 /*
  * Utils
  */

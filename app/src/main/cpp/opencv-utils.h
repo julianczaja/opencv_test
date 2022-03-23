@@ -5,3 +5,5 @@
 using namespace cv;
 
 void mirrorImage(Mat src);
+
+void grayscaleImage(Mat src);
